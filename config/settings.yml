@@ -1,0 +1,12 @@
+user:
+  email:
+    maximum_length: 255
+  name:
+    maximum_length: 50
+category:
+  max_time:
+    minimum: 0
+question:
+  answers:
+    minimum: 4
+  correct_answer_number: 1
