@@ -1,0 +1,7 @@
+en:
+  layouts:
+    header:
+      logo: "Test App"
+      home: "Home"
+    footer:
+      copyright: "Copyright Training Team"
