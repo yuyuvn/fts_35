@@ -1,0 +1,5 @@
+en:
+  activerecord:
+    errors:
+      messages:
+        wrong_correct_answer_number: "Must have 1 and only 1 correct answer"
