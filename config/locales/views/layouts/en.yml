@@ -3,5 +3,10 @@ en:
     header:
       logo: "Test App"
       home: "Home"
+      profile: "Profile"
+      setting: "Setting"
+      logout: "Logout"
+      signup: "Sign Up"
+      signin: "Sign in"
     footer:
       copyright: "Copyright Training Team"
