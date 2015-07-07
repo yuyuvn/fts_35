@@ -1,0 +1,6 @@
+en:
+  devise:
+    registrations:
+      new:
+        title: "Sign Up"
+        submit-btn: "Create my account"
