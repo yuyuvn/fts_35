@@ -40,6 +40,7 @@ GEM
     autoprefixer-rails (5.2.0)
       execjs
       json
+    bcrypt (3.1.10)
     bcrypt (3.1.10-x86-mingw32)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -68,6 +69,12 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.5.2)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
+    ffaker (2.0.0)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -177,6 +184,8 @@ DEPENDENCIES
   cancancan
   coffee-rails (~> 4.1.0)
   devise
+  factory_girl_rails
+  ffaker
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
