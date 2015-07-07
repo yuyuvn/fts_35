@@ -1,0 +1,14 @@
+<% provide :title, @user.name %>
+<div class="row">
+  <div class="center jumbotron">
+    <h1><%= t ".title" %></h1>
+    <aside>
+      <p>
+        <%= t ".name", name: @user.name %>
+      </p>
+      <p>
+        <%= t ".email", email: @user.email %>
+      </p>
+    </aside>
+  </div>
+</div>
