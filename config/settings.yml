@@ -10,3 +10,5 @@ default_admin:
   email: "admin@framgia.com"
   password: "password"
 gravatar_url: "https://secure.gravatar.com/avatar/"
+question:
+  minimum_answers: 4

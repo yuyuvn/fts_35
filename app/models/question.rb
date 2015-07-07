@@ -18,7 +18,6 @@ class Question < ActiveRecord::Base
   def correct_answer_number
     errors.add :base,
       I18n.t("activerecord.errors.messages.wrong_correct_answer_number") unless
-        answers.reject(&:marked_for_destruction?).count(&:is_correct?)
-        .select(&:correct?).count == 1
+        answers.reject(&:marked_for_destruction?).select(&:correct?).count == 1
   end
 end
