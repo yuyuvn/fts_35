@@ -4,4 +4,8 @@ class User < ActiveRecord::Base
   has_many :exams, dependent: :destroy
 
   validates :name, presence: true
+
+  def is_guest?
+    id.nil?
+  end
 end
