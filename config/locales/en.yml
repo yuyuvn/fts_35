@@ -1,2 +1,6 @@
 en:
   access_denied: "You don't have permission to view this page"
+  messages:
+    user:
+      updated: "User has been updated"
+      deleted: "User has been deleted"
