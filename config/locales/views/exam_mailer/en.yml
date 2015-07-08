@@ -1,0 +1,10 @@
+en:
+  exam_mailer:
+    finished_announce:
+      title: "Your exam has been scored"
+      content: "Your exam has been scored, please go to %{here} to view result"
+      text_content: "Your exam has been scored, please go to this link to view result:"
+      here: "here"
+    remind_user:
+      title: "You should do your exam"
+      content: "You have exam remain, please do it"
