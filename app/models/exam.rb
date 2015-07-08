@@ -4,6 +4,9 @@ class Exam < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
 
+  scope :old_exam, ->{where(started: false)
+    .where "created_at <= ?", Settings.exams.time_limit.weeks.ago}
+
   accepts_nested_attributes_for :results
 
   before_create ->{self.questions = category.questions.some}
