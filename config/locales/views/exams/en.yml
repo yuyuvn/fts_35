@@ -1,0 +1,10 @@
+en:
+  exams:
+    edit:
+      title: "Exam"
+      time_left: "Time left:"
+    show:
+      title: "Exam"
+      time_left: "Time left:"
+    form:
+      submit: "Submit"
