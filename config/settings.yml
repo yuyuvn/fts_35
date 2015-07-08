@@ -9,3 +9,5 @@ category:
 question:
   minimum_answers: 4 
   correct_answer_number: 1
+exams:
+  questions_per_exam: 30

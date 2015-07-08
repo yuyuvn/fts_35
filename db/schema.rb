@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706074539) do
+ActiveRecord::Schema.define(version: 20150708041451) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "content",     limit: 255
@@ -34,8 +34,11 @@ ActiveRecord::Schema.define(version: 20150706074539) do
     t.integer  "correct_number", limit: 4, default: 0
     t.integer  "user_id",        limit: 4
     t.integer  "category_id",    limit: 4
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.boolean  "started",        limit: 1, default: false
+    t.datetime "started_at"
+    t.boolean  "finished",       limit: 1, default: false
   end
 
   add_index "exams", ["category_id"], name: "index_exams_on_category_id", using: :btree

@@ -4,3 +4,5 @@ en:
     user:
       updated: "User has been updated"
       deleted: "User has been deleted"
+    exams:
+      finished: "Exam finished"

@@ -8,8 +8,8 @@ class Ability
     end
 
     if !user.is_guest?
-      can :create, :exam
-      can [:read, :update], :exam, user_id: user.id
+      can :create, Exam
+      can [:read, :update], Exam, user_id: user.id
     end
   end
 end
