@@ -7,3 +7,9 @@ en:
         answers: "Answers"
         add_answer: "Add answer"
         submit: "Submit"
+      show:
+        created_time: "Created at: %{created_time}"
+        updated_time: "Updated at: %{updated_time}"
+        flash_editted_question: "Qestion was editted"
+      edit:
+        title: "Edit Question"
