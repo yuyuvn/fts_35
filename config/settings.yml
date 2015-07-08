@@ -11,3 +11,4 @@ question:
   correct_answer_number: 1
 exams:
   questions_per_exam: 30
+  time_limit: 1
