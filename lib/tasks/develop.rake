@@ -1,7 +1,14 @@
 require "factory_girl"
 namespace :develop do
-  desc "TODO"
+  desc "Create data for development"
   task create_data: :environment do
-    FactoryGirl.create :category
+    user = FactoryGirl.create :user, email: "yuyuvn@mac.com",
+      password: "12345678", password_confirmation: "12345678"
+    5.times{FactoryGirl.create :user}
+    3.times{FactoryGirl.create :category}
+
+    category = Category.first
+    10.times{FactoryGirl.create :question, category: category}
+    2.times{FactoryGirl.create :exam, user: user, category: category}
   end
 end
