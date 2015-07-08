@@ -6,6 +6,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def show
+    @questions = @category.questions
   end
 
   def new

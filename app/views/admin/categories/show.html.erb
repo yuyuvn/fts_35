@@ -17,4 +17,16 @@
       </h3>
     </section>
   </aside>
+  <aside class="col-md-6">
+    <section class="user_info">
+      <% @questions.each do |question| %>
+        <h2>
+          <%= link_to question.content, [:admin, @category, question] %>
+          <%= link_to "", [:admin, @category, question], method: :delete,
+            data: {confirm: t(".confirm_sure")},
+            class: "glyphicon glyphicon-trash" %>
+        </h2>
+      <% end %>
+    </section>
+  </aside>
 </div>

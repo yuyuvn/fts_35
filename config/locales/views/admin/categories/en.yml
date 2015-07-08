@@ -21,5 +21,8 @@ en:
         edit: "Edit Category"
         flash_editted: "Category was editted"
         question_created: "question was created"
+        confirm_sure: "Are you sure?"
+        flash_deleted: "Question was deleted"
+        flash_not_delete: "Question wasn't delete"
       edit:
         title: "Edit Category"
