@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, alert: exception.message
   end
 
+  add_flash_types :success, :danger, :info
+
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) {|u| u.permit :name, :email,

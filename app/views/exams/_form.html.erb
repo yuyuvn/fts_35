@@ -1,0 +1,10 @@
+<%= form_for @exam,
+  method: "patch",
+  html: {id: "question_form"} do |f| %>
+  <%= f.hidden_field :category_id %>
+  <%= f.hidden_field :finished? %>
+  <%= f.fields_for :results, wrapper: false do |builder| %>
+    <%= render "answer_form", f: builder %>
+  <% end %>
+  <%= f.submit t(".submit"), class: "btn btn-primary" unless @exam.finished? %>
+<% end %>

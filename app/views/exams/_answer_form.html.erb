@@ -1,0 +1,15 @@
+<div class="row answer-form">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="row">
+      <%= f.object.question.content %>
+    </div>
+    <div class="row" role="group">
+      <% f.object.question.answers.each do |answer| %>
+        <div class="radio">
+          <%= f.radio_button :answer_id, answer.id %>
+          <%= answer.content %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

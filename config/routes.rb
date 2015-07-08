@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :users, only: :show
 
+  resources :exams, except: [:index, :destroy, :create]
   namespace :admin do
     root "users#index"
     resources :users, except: [:show, :new, :create]

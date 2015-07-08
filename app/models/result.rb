@@ -4,6 +4,6 @@ class Result < ActiveRecord::Base
   belongs_to :question
 
   def is_correct?
-    answer.is_correct?
+    answer.try(:is_correct?) || false
   end
 end
