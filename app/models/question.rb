@@ -9,7 +9,7 @@ class Question < ActiveRecord::Base
     allow_destroy: true
   
   validates :content, presence: true
-  validates :answers, length: {minimum: Settings.question.answers.minimum}
+  validates :answers, length: {minimum: Settings.question.minimum_answers}
   validate :correct_answer_number
   
   private

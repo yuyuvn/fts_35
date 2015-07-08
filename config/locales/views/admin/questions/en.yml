@@ -1,0 +1,9 @@
+en:
+  admin:
+    questions:
+      new:
+        title: "Add Question"
+      form:
+        answers: "Answers"
+        add_answer: "Add answer"
+        submit: "Submit"

@@ -20,5 +20,6 @@ en:
         add_question: "Add question to category"
         edit: "Edit Category"
         flash_editted: "Category was editted"
+        question_created: "question was created"
       edit:
         title: "Edit Category"
