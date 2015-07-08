@@ -3,6 +3,22 @@ en:
     categories:
       index:
         title: "Categories manager"
+        add: "Create Category"
+        flash_add: "Category was created"
+        flash_not_delete: "Category wasn't delete"
+        flash_delete: "Category was deleted"
       category:
         created_time: "Created at: %{created_time}"
         updated_time: "Updated at: %{updated_time}"
+        confirm_sure: "Are you sure?"
+      new:
+        title: "New Category"
+      form:
+        submit: "Submit"
+      show:
+        max_time: "Max time: %{max_time}"
+        add_question: "Add question to category"
+        edit: "Edit Category"
+        flash_editted: "Category was editted"
+      edit:
+        title: "Edit Category"

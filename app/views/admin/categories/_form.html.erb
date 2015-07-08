@@ -1,0 +1,11 @@
+<%= form_for [:admin, @category] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :max_time %>
+  <%= f.number_field :max_time, class: "form-control" %>
+
+  <%= f.submit t(".submit"), class: "btn btn-primary" %>
+<% end %>
