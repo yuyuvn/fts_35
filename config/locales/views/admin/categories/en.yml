@@ -1,0 +1,8 @@
+en:
+  admin:
+    categories:
+      index:
+        title: "Categories manager"
+      category:
+        created_time: "Created at: %{created_time}"
+        updated_time: "Updated at: %{updated_time}"
