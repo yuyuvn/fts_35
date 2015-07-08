@@ -1,0 +1,4 @@
+jQuery ->
+  $(".answers-fields").on "change", "input.is_correct:checked", ->
+    $(".answers-fields input.is_correct:checked").prop('checked', false);
+    $(this).prop('checked', true);

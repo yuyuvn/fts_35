@@ -7,6 +7,5 @@ category:
   max_time:
     minimum: 0
 question:
-  answers:
-    minimum: 4
+  minimum_answers: 4 
   correct_answer_number: 1
