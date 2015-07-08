@@ -1,0 +1,20 @@
+<% provide :title, @category.name %>
+<div class="row">
+  <aside class="col-md-6">
+    <section class="user_info">
+      <h1>
+        <%= @category.name %>
+      </h1>
+      <p>
+        <%= t ".max_time", max_time: @category.max_time %>
+      </p>
+      </br>
+      <h3>
+        <%= link_to t(".add_quesion"), [:new, :admin, @category, :question] %>
+      </h3>
+      <h3>
+        <%= link_to t("edit"), [:edit, :admin, @category] %>
+      </h3>
+    </section>
+  </aside>
+</div>
