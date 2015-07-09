@@ -13,10 +13,12 @@ class Exam < ActiveRecord::Base
   before_save ->{self.correct_number = results.select{|result|
     result.is_correct?}.count}
 
-  after_create ->{ExamWorker.perform_in Settings.delay_time.hours, self.id}
+  after_create ->{RemineUserWorker.perform_in Settings.delay_time.hours, self.id}
 
   def start
     update_attributes started: true, started_at: Time.zone.now
+    time_do_exam = category.max_time.minutes + Settings.exams.latency.seconds
+    FinishExamWorker.perform_in time_do_exam, id
   end
 
   def time_left

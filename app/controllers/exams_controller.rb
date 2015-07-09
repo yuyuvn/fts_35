@@ -18,8 +18,10 @@ class ExamsController < ApplicationController
   end
 
   def edit
-    redirect_to @exam if @exam.started?
-    @exam.start
+    if @exam.started?
+      redirect_to @exam
+      @exam.start
+    end
   end
 
   def update
