@@ -29,5 +29,10 @@ class Exam < ActiveRecord::Base
 
   def finish
     update_attributes finished: true
+    announce_finished
+  end
+
+  def announce_finished
+    ExamMailer.finished_announce(self).deliver
   end
 end

@@ -52,6 +52,10 @@ gem "devise"
 # Authorization
 gem "cancancan"
 
+# Background job
+gem "sidekiq"
+gem "sidekiq_mailer"
+
 gem "whenever", require: false
 
 group :development, :test do
