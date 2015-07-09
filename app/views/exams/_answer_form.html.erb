@@ -10,6 +10,12 @@
           <%= answer.content %>
         </div>
       <% end %>
+      <% if f.object.exam.finished? %>
+        <div class="checkbox answer-<%= f.object.is_correct? %>">
+          <%= f.check_box :is_correct? %>
+          <%= t ".correct_answer" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
