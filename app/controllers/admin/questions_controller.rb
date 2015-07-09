@@ -3,7 +3,7 @@ class Admin::QuestionsController < ApplicationController
   load_and_authorize_resource through: :category
 
   def new
-    Settings.question.minimum_answers.times{@question.answers.build}
+    4.times{@question.answers.build}
   end
 
   def show
