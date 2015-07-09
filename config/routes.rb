@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  root "static_pages#home"
+  authenticated :user do
+    root to: "exams#new", as: "authenticated_root"
+  end
+  unauthenticated do
+    root "static_pages#home"
+  end
 
   devise_for :users
 
