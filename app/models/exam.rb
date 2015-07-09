@@ -13,6 +13,8 @@ class Exam < ActiveRecord::Base
   before_save ->{self.correct_number = results.select{|result|
     result.is_correct?}.count}
 
+  after_create ->{ExamWorker.perform_in Settings.delay_time.hours, self.id}
+
   def start
     update_attributes started: true, started_at: Time.zone.now
   end
