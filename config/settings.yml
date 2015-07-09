@@ -12,6 +12,7 @@ question:
 exams:
   questions_per_exam: 30
   time_limit: 1
+  latency: 5
 mailer:
   form: "admin@gmail.com"
 delay_time: 2

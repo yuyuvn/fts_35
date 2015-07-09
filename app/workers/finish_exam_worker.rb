@@ -1,8 +1,8 @@
-class ExemWorker
+class FinishExamWorker
   include Sidekiq::Worker
 
   def perform exam_id
     exam = Exam.find exam_id
-    ExamMailer.remine_user(exam).deliver unless exam.started?
+    exam.finish unless exam.finished?
   end
 end
