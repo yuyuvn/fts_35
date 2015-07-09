@@ -6,3 +6,4 @@ en:
       deleted: "User has been deleted"
     exams:
       finished: "Exam finished"
+      created: "Exam created"

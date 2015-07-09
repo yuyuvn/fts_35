@@ -10,3 +10,6 @@ en:
       submit: "Submit"
     answer_form:
       correct_answer: "Answer correct"
+    new:
+      title: "New exam"
+      submit: "Submit"

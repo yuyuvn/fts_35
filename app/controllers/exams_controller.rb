@@ -5,6 +5,18 @@ class ExamsController < ApplicationController
     redirect_to [:edit, @exam] unless @exam.started?
   end
 
+  def new
+    @categories = Category.all
+  end
+
+  def create
+    if @exam.save
+      redirect_to root_url , success: t("messages.exams.created")
+    else
+      render :new
+    end
+  end
+
   def edit
     redirect_to @exam if @exam.started?
     @exam.start
@@ -24,5 +36,10 @@ class ExamsController < ApplicationController
   private
   def exam_params
     params.require(:exam).permit results_attributes: [:id, :answer_id]
+  end
+
+  def create_params
+    params.require(:exam).merge(user_id: current_user.id)
+      .permit [:user_id, :category_id]
   end
 end
