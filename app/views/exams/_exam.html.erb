@@ -1,0 +1,25 @@
+<aside>
+  <section class="user_info">
+    <h1>
+      <b><%= exam.created_at %></b>
+    </h1>
+    </br>
+    <p>
+      <%= exam.category.name %>
+      <% if exam.started? %>
+        <span>
+          <%= link_to t(".view"), exam, class: "btn btn-info" %>
+        </span>
+      <% else %>
+        <span>
+          <%= link_to t(".start"), [:edit, exam], class: "btn btn-info" %>
+        </span>
+      <% end %>
+      <% if exam.finished? %>
+        <p>
+          <%= t ".score", correct: exam.correct_number, all: exam.results.count %>
+        </p>
+      <% end %>
+    </p>
+  </section>
+</aside>

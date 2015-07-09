@@ -13,3 +13,7 @@ en:
     new:
       title: "New exam"
       submit: "Submit"
+    exam:
+      start: "Start"
+      view: "View"
+      score: "Score: %{correct}/%{all}"

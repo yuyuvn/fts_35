@@ -1,7 +1,11 @@
 <% provide :title, t(".title") %>
-
-<%= form_for @exam do |f| %>
-  <%= f.select :category_id,
-    options_from_collection_for_select(@categories, :id, :name) %>
-  <%= f.submit t(".submit"), class: "btn btn-primary" %>
-<% end %>
+<div class="row">
+  <%= form_for @exam do |f| %>
+    <%= f.select :category_id,
+      options_from_collection_for_select(@categories, :id, :name) %>
+    <%= f.submit t(".submit"), class: "btn btn-primary" %>
+  <% end %>
+</div>
+<div class="row">
+  <%= render current_user.exams %>
+</div>
