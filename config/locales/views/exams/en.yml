@@ -8,3 +8,5 @@ en:
       time_left: "Time left:"
     form:
       submit: "Submit"
+    answer_form:
+      correct_answer: "Answer correct"
