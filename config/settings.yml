@@ -13,4 +13,5 @@ exams:
   questions_per_exam: 30
   time_limit: 1
 mailer:
-  from: "admin@framgia.com"
+  form: "admin@gmail.com"
+delay_time: 2
