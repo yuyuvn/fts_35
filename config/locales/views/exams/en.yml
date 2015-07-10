@@ -13,6 +13,8 @@ en:
     new:
       title: "New exam"
       submit: "Submit"
+      create_exam: "Create New Exam"
+      all_exams: "All Examinations"
     exam:
       start: "Start"
       view: "View"

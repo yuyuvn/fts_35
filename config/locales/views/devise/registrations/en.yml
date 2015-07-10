@@ -4,6 +4,7 @@ en:
       new:
         title: "Sign Up"
         submit-btn: "Create my account"
+        mini_character: "characters minimum"
       edit:
         title: "Edit"
         comfirm_email_notice: "Currently waiting confirmation for: %{mail}"

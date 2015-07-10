@@ -1,25 +1,48 @@
 <aside>
-  <section class="user_info">
-    <h1>
-      <b><%= exam.created_at %></b>
-    </h1>
-    </br>
-    <p>
-      <%= exam.category.name %>
-      <% if exam.started? %>
-        <span>
-          <%= link_to t(".view"), exam, class: "btn btn-info" %>
-        </span>
-      <% else %>
-        <span>
-          <%= link_to t(".start"), [:edit, exam], class: "btn btn-info" %>
-        </span>
-      <% end %>
-      <% if exam.finished? %>
-        <p>
-          <%= t ".score", correct: exam.correct_number, all: exam.results.count %>
-        </p>
-      <% end %>
-    </p>
-  </section>
+  <ul>
+    <li>
+      <span class="span-inline-bold span-width-20">
+        <b><%= exam.created_at %></b>
+      </span>
+      <span class="span-inline-bold span-width-20">
+        &nbsp
+      </span>
+      <span class="span-inline-bold span-width-20">
+        &nbsp
+      </span>
+      <span class="span-inline-bold span-width-40">
+        &nbsp
+      </span>
+      <p>
+        <% if exam.started? %>
+          <span class="span-inline span-width-30">
+            <%= exam.category.name %>
+          </span>
+          <span class="span-inline span-width-15">
+            <% if exam.finished? %>
+              <%= t ".score", correct: exam.correct_number,
+                all: exam.results.count %>
+            <% end %>
+            &nbsp
+          </span>
+          <span class="span-inline span-width-20">
+            &nbsp
+          </span>
+          <span class="span-inline span-width-10">
+            <%= link_to t(".view"), exam %>
+          </span>
+          <span class="span-inline span-width-25">
+            &nbsp
+          </span>
+        <% else %>
+          <span class="span-inline span-width-66">
+            <%= exam.category.name %>
+          </span>
+          <span class="span-inline span-width-20">
+            <%= link_to t(".start"), [:edit, exam] %>
+          </span>
+        <% end %>
+      </p>
+    </li>
+  </ul>
 </aside>
