@@ -8,5 +8,7 @@ en:
       logout: "Logout"
       signup: "Sign Up"
       signin: "Sign in"
+      mana_cate: "Manage Category"
+      mana_user: "Manage User"
     footer:
       copyright: "Copyright Training Team"
