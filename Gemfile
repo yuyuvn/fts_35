@@ -54,7 +54,6 @@ gem "cancancan"
 
 # Background job
 gem "sidekiq"
-gem "sidekiq_mailer"
 
 gem "whenever", require: false
 

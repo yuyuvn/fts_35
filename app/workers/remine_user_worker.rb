@@ -3,6 +3,6 @@ class RemineUserWorker
 
   def perform exam_id
     exam = Exam.find exam_id
-    ExamMailer.remine_user(exam).deliver unless exam.started?
+    ExamMailer.remind_user(exam).deliver! unless exam.started?
   end
 end

@@ -14,5 +14,5 @@ exams:
   time_limit: 1
   latency: 5
 mailer:
-  form: "admin@gmail.com"
+  from: "admin@gmail.com"
 delay_time: 2

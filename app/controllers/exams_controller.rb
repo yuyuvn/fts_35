@@ -18,10 +18,7 @@ class ExamsController < ApplicationController
   end
 
   def edit
-    if @exam.started?
-      redirect_to @exam
-      @exam.start
-    end
+    @exam.started? ? redirect_to(@exam) : @exam.start
   end
 
   def update
