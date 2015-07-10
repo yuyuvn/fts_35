@@ -37,6 +37,6 @@ class Exam < ActiveRecord::Base
   end
 
   def announce_finished
-    ExamMailer.finished_announce(self).deliver
+    ExamMailer.delay.finished_announce(self)
   end
 end
