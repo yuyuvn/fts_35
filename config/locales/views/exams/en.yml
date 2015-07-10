@@ -19,3 +19,4 @@ en:
       start: "Start"
       view: "View"
       score: "Score: %{correct}/%{all}"
+    timeout: "Timeout!!!"

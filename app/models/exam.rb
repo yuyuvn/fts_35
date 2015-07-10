@@ -17,8 +17,7 @@ class Exam < ActiveRecord::Base
 
   def start
     update_attributes started: true, started_at: Time.zone.now
-    time_do_exam = category.max_time.minutes + Settings.exams.latency.seconds
-    FinishExamWorker.perform_in time_do_exam, id
+    FinishExamWorker.perform_in category.max_time.minutes, id
   end
 
   def time_left
