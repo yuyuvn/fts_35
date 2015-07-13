@@ -4,10 +4,13 @@ class Admin::UsersController < Admin::BaseController
   before_action :set_user, only: [:edit, :update, :destroy]
 
   def index
-    @users = User.page params[:page]
     respond_to do |format|
-      format.html
+      format.html do
+        @search = User.search params[:q]
+        @users = @search.result.page params[:page]
+      end
       format.csv do
+        @users = User.all
         @headers = Settings.user.csv.fields.map do |field|
           @users.human_attribute_name field
         end
