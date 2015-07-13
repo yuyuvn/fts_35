@@ -1,6 +1,6 @@
 require "csv"
 class Admin::UsersController < Admin::BaseController
-  load_and_authorize_resource param_method: :user_params
+  load_and_authorize_resource except: :create
   before_action :set_user, only: [:edit, :update, :destroy]
 
   def index
@@ -11,9 +11,7 @@ class Admin::UsersController < Admin::BaseController
       end
       format.csv do
         @users = User.all
-        @headers = Settings.user.csv.fields.map do |field|
-          @users.human_attribute_name field
-        end
+        @headers = Settings.user.csv.fields
         headers["Content-Disposition"] =
           %(attachment; filename="#{Settings.user.csv.filename}")
         headers["Content-Type"] = Settings.user.csv.type
