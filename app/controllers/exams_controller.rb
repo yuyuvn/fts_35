@@ -7,6 +7,8 @@ class ExamsController < ApplicationController
 
   def new
     @categories = Category.all
+    @search = current_user.exams.search params[:q]
+    @exams = @search.result.accessible_by current_ability
   end
 
   def create
