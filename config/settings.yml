@@ -3,6 +3,10 @@ user:
     maximum_length: 255
   name:
     maximum_length: 50
+  csv:
+    fields: ["name", "email", "is_admin"]
+    filename: "user-list.csv"
+    type: "text/csv"
 category:
   max_time:
     minimum: 0

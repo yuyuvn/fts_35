@@ -4,6 +4,7 @@ en:
       index:
         title: "Users manager"
         new: "New user"
+        export_csv: "Export csv"
       user:
         confirm_delete: "Are your sure you want to delete this user?"
       edit:
