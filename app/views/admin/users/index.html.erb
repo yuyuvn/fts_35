@@ -1,6 +1,7 @@
 <% provide :title, t(".title") %>
 
 <h1><%= t ".title" %></h1>
+<%= link_to t(".export_csv"), admin_users_path(format: :csv) %>
 <ul class="users">
   <%= render @users %>
 </ul>

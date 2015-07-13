@@ -1,0 +1,1 @@
+<%= CSV.generate_line Settings.user.csv.fields.map{|field| user.try field} %>
