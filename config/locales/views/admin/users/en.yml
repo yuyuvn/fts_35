@@ -5,6 +5,8 @@ en:
         title: "Users manager"
         new: "New user"
         export_csv: "Export csv"
+        search_f: "Search Form"
+        users_list: "Users List"
       user:
         confirm_delete: "Are your sure you want to delete this user?"
       edit:
@@ -12,3 +14,9 @@ en:
       form:
         submit: "Submit"
         confirmation: "Confirmation"
+      search_form:
+        name: "Name Containts:"
+        email: "Email Containts:"
+        created_from: "Created time from"
+        to: "To"
+        submit: "Search"
