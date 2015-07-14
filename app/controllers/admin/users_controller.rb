@@ -1,16 +1,14 @@
 require "csv"
 class Admin::UsersController < Admin::BaseController
-  load_and_authorize_resource except: :create
-  before_action :set_user, only: [:edit, :update, :destroy]
+  load_and_authorize_resource
 
   def index
     respond_to do |format|
       format.html do
-        @search = User.search params[:q]
+        @search = @users.search params[:q]
         @users = @search.result.page params[:page]
       end
       format.csv do
-        @users = User.all
         @headers = Settings.user.csv.fields
         headers["Content-Disposition"] =
           %(attachment; filename="#{Settings.user.csv.filename}")
@@ -36,10 +34,6 @@ class Admin::UsersController < Admin::BaseController
   end
 
   private
-  def set_user
-    @user = User.find params[:id]
-  end
-
   def user_params
     params.require(:user).permit :name, :email
   end
