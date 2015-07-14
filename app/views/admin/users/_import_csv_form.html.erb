@@ -1,0 +1,5 @@
+<%= form_tag admin_imports_path, url: admin_imports_path,
+  html: {method: :post}, multipart: true do %>
+  <%= file_field_tag :file, class: "form-control" %>
+  <%= submit_tag t(".import"), class: "btn btn-primary" %>
+<% end %>

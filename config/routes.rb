@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   resources :exams, except: [:index, :destroy]
   namespace :admin do
     root "users#index"
-    resources :users, except: [:show, :new, :create]
+    resources :imports, only: :create
+    resources :users, except: [:show, :new]
     resources :categories do
       resources :questions
     end
