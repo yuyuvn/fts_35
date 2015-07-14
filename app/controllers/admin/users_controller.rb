@@ -1,7 +1,6 @@
 require "csv"
 class Admin::UsersController < Admin::BaseController
-  load_and_authorize_resource except: :create
-  before_action :set_user, only: [:edit, :update, :destroy]
+  load_and_authorize_resource
 
   def index
     respond_to do |format|
@@ -16,6 +15,17 @@ class Admin::UsersController < Admin::BaseController
           %(attachment; filename="#{Settings.user.csv.filename}")
         headers["Content-Type"] = Settings.user.csv.type
       end
+    end
+  end
+
+  def new
+  end
+
+  def create
+    if @user.save
+      redirect_to @user, success: t("messages.user.created")
+    else
+      render :new
     end
   end
 
@@ -36,11 +46,12 @@ class Admin::UsersController < Admin::BaseController
   end
 
   private
-  def set_user
-    @user = User.find params[:id]
-  end
-
   def user_params
     params.require(:user).permit :name, :email
+  end
+
+  def create_params
+    user_params.merge password:
+     Devise.friendly_token.first(Settings.user.password_length)
   end
 end
