@@ -13,7 +13,7 @@ class ExamsController < ApplicationController
 
   def create
     if @exam.save
-      redirect_to root_url , success: t("messages.exams.created")
+      redirect_to root_url, success: t("messages.exams.created")
     else
       render :new
     end

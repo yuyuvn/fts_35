@@ -23,7 +23,8 @@ class Admin::QuestionsController < ApplicationController
 
   def update
     if @question.update_attributes question_params
-      redirect_to admin_category_question_url, success: t(".flash_editted_question")
+      redirect_to admin_category_question_url,
+        success: t("flash_editted_question")
     else
       render :edit
     end

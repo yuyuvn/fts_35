@@ -9,10 +9,8 @@ class Admin::UsersController < Admin::BaseController
         @users = @search.result.page params[:page]
       end
       format.csv do
-        @headers = Settings.user.csv.fields
-        headers["Content-Disposition"] =
-          %(attachment; filename="#{Settings.user.csv.filename}")
-        headers["Content-Type"] = Settings.user.csv.type
+        send_data render_to_string, type: Settings.user.csv.type,
+          filename: Settings.user.csv.filename
       end
     end
   end

@@ -16,11 +16,9 @@ class Question < ActiveRecord::Base
 
   private
   def correct_answer_number
-    unless answers.reject(&:marked_for_destruction?)
-      .select{|answer| answer.is_correct?}
-      .length == Settings.question.correct_answer_number
-      self.errors.add :base,
-        I18n.t("activerecord.errors.messages.wrong_correct_answer_number")
-    end
+    errors.add :base,
+      I18n.t("activerecord.errors.messages.wrong_correct_answer_number") unless
+        answers.reject(&:marked_for_destruction?)
+        .count(&:is_correct?) == Settings.question.correct_answer_number
   end
 end

@@ -24,3 +24,4 @@ default_admin:
   name: "Admin"
   email: "admin@framgia.com"
   password: "password"
+gravatar_url: "https://secure.gravatar.com/avatar/"
