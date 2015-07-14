@@ -17,6 +17,17 @@ class Admin::UsersController < Admin::BaseController
     end
   end
 
+  def new
+  end
+
+  def create
+    if @user.save
+      redirect_to @user, success: t("messages.user.created")
+    else
+      render :new
+    end
+  end
+
   def edit
   end
 
@@ -36,5 +47,10 @@ class Admin::UsersController < Admin::BaseController
   private
   def user_params
     params.require(:user).permit :name, :email
+  end
+
+  def create_params
+    user_params.merge password:
+     Devise.friendly_token.first(Settings.user.password_length)
   end
 end

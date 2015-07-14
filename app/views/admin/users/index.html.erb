@@ -22,6 +22,8 @@
 <h1 class="left">
   <%= t ".users_list" %>
 </h1>
+<%= link_to t(".create"), [:new, :admin, :user],
+  class: "btn btn-primary" %>
 <%= link_to t(".export_csv"), admin_users_path(format: :csv),
   class: "btn btn-primary" %>
 <ul class="users">

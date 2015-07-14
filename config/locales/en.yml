@@ -2,6 +2,7 @@ en:
   access_denied: "You don't have permission to view this page"
   messages:
     user:
+      created: "User has been created"
       updated: "User has been updated"
       deleted: "User has been deleted"
     exams:
