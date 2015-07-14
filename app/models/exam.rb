@@ -21,10 +21,8 @@ class Exam < ActiveRecord::Base
   end
 
   def time_left
-    if finished?
-      0
-    elsif started?
-      started_at - category.max_time.minutes.ago
+    if started?
+      finished? ? 0 : started_at - category.max_time.minutes.ago
     else
       category.max_time.minutes
     end
@@ -36,6 +34,6 @@ class Exam < ActiveRecord::Base
   end
 
   def announce_finished
-    ExamMailer.delay.finished_announce(self)
+    ExamMailer.delay.finished_announce self
   end
 end
