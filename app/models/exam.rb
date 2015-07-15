@@ -4,16 +4,17 @@ class Exam < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
 
-  scope :old_exam, ->{where(started: false)
-    .where "created_at <= ?", Settings.exams.time_limit.weeks.ago}
+  scope :old_exam, lambda {
+    where(started: false).where "created_at <= ?",
+      Settings.exams.time_limit.weeks.ago
+  }
 
   accepts_nested_attributes_for :results
 
   before_create ->{self.questions = category.questions.some}
-  before_save ->{self.correct_number = results.select{|result|
-    result.is_correct?}.count}
+  before_save ->{self.correct_number = results.count(&:is_correct?)}
 
-  after_create ->{RemineUserWorker.perform_in Settings.delay_time.hours, self.id}
+  after_create ->{RemineUserWorker.perform_in Settings.delay_time.hours, id}
 
   def start
     update_attributes started: true, started_at: Time.zone.now

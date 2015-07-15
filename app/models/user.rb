@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   def self.import file
     CSV.foreach file.path, headers: true do |row|
-      User.create row.to_hash.merge password: 
+      User.create row.to_hash.merge password:
         Devise.friendly_token.first(Settings.user.password_length)
     end
   end

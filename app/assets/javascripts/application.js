@@ -16,7 +16,7 @@
 //= require bootstrap
 //= require_tree .
 
-function remove_fields(link) {
+function rm_field(link) {
   $(link).prev("input[type=hidden]").val("1");
   $(link).closest(".field").hide();
 }
