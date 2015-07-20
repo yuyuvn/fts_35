@@ -1,25 +1,10 @@
 user:
-  email:
-    maximum_length: 255
-  name:
-    maximum_length: 50
   csv:
     fields: ["name", "email"]
     filename: "user-list.csv"
     type: "text/csv"
-  password_length: 8
-category:
-  max_time:
-    minimum: 0
-question:
-  minimum_answers: 4
-  correct_answer_number: 1
-exams:
-  questions_per_exam: 30
-  time_limit: 1
 mailer:
   from: "admin@gmail.com"
-delay_time: 2
 default_admin:
   name: "Admin"
   email: "admin@framgia.com"

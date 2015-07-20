@@ -4,5 +4,5 @@ class Category < ActiveRecord::Base
 
   validates :name, presence: true
   validates :max_time, presence: true, numericality: {only_integer: true,
-    greater_than: Settings.category.max_time.minimum}
+    greater_than: 0}
 end
