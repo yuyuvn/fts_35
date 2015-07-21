@@ -12,7 +12,8 @@ class Admin::QuestionsController < ApplicationController
 
   def create
     if @question.save
-      redirect_to admin_category_url @category, success: t(".question_created")
+      redirect_to admin_category_url @category,
+        success: t("messages.admin.questions.created")
     else
       render :new
     end
@@ -24,23 +25,24 @@ class Admin::QuestionsController < ApplicationController
   def update
     if @question.update_attributes question_params
       redirect_to admin_category_question_url,
-        success: t("flash_editted_question")
+        success: t("messages.admin.questions.updated")
     else
       render :edit
     end
   end
 
   def destroy
-    if @question.destroy
-      redirect_to admin_category_url @category, success: t(".flash_deleted")
+    flash = if @question.destroy
+      {success: t("messages.admin.questions.deleted")}
     else
-      redirect_to admin_category_url @category, success: t(".flash_not_delete")
+      {success: t("messages.admin.questions.not_deleted")}
     end
+    redirect_to admin_category_url @category, flash
   end
 
   private
   def question_params
     params.require(:question).permit :content,
-      answers_attributes: [:id, :content, :is_correct, :_destroy]
+      answers_attributes: [:id, :content, :correct, :_destroy]
   end
 end

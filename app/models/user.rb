@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
 
-  def is_guest?
+  def guest?
     id.nil?
   end
 

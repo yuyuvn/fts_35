@@ -20,7 +20,7 @@ class Admin::UsersController < Admin::BaseController
 
   def create
     if @user.save
-      redirect_to @user, success: t("messages.user.created")
+      redirect_to @user, success: t("messages.admin.user.created")
     else
       render :new
     end
@@ -31,7 +31,7 @@ class Admin::UsersController < Admin::BaseController
 
   def update
     if @user.update_attributes user_params
-      redirect_to @user, success: t("messages.user.updated")
+      redirect_to @user, success: t("messages.admin.user.updated")
     else
       render :edit
     end
@@ -39,7 +39,7 @@ class Admin::UsersController < Admin::BaseController
 
   def destroy
     @user.destroy
-    redirect_to admin_users_url, success: t("messages.user.deleted")
+    redirect_to admin_users_url, success: t("messages.admin.user.deleted")
   end
 
   private
@@ -49,6 +49,6 @@ class Admin::UsersController < Admin::BaseController
 
   def create_params
     user_params.merge password:
-     Devise.friendly_token.first(Settings.user.password_length)
+      Devise.friendly_token.first(Settings.user.password_length)
   end
 end

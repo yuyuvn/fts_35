@@ -3,7 +3,7 @@ class Result < ActiveRecord::Base
   belongs_to :exam
   belongs_to :question
 
-  def is_correct?
-    answer.try(:is_correct?) || false
+  def correct?
+    answer.try(:correct?) || false
   end
 end

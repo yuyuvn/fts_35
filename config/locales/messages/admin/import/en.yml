@@ -1,0 +1,5 @@
+en:
+  messages:
+    admin:
+      imports:
+        success: "CSV file was imported!"

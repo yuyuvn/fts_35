@@ -17,7 +17,7 @@
   <aside class="col-md-6">
     <section>
       <% @answers.each do |answer| %>
-        <% if answer.is_correct %>
+        <% if answer.correct %>
           <p class="alert alert-success"><%= answer.content %></p>
         <% else %>
           <p class="alert alert-danger"><%= answer.content %></p>

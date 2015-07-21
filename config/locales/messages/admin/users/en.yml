@@ -1,0 +1,7 @@
+en:
+  messages:
+    admin:
+      user:
+        created: "User has been created"
+        updated: "User has been updated"
+        deleted: "User has been deleted"
