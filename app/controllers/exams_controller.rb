@@ -26,7 +26,7 @@ class ExamsController < ApplicationController
   def update
     if @exam.finished?
       redirect_to @exam
-    elsif @exam.update_attributes(exam_params)
+    elsif @exam.update_attributes exam_params
       @exam.finish
       redirect_to @exam, success: t("messages.exams.finished")
     else

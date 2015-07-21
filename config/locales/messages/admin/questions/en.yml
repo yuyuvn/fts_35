@@ -1,0 +1,8 @@
+en:
+  messages:
+    admin:
+      questions:
+        created: "Question was created"
+        updated: "Question was editted"
+        deleted: "Question was deleted"
+        not_deleted: "Question wasn't deleted"

@@ -1,0 +1,8 @@
+en:
+  messages:
+    admin:
+      categories:
+        created: "Category was created"
+        updated: "Category was updated"
+        deleted: "Category has been deleted"
+        not_deleted: "Category wasn't deleted"

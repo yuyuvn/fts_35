@@ -11,8 +11,8 @@
         </div>
       <% end %>
       <% if f.object.exam.finished? %>
-        <div class="checkbox answer-<%= f.object.is_correct? %>">
-          <%= f.check_box :is_correct? %>
+        <div class="checkbox answer-<%= f.object.correct? %>">
+          <%= f.check_box :correct? %>
           <%= t ".correct_answer" %>
         </div>
       <% end %>

@@ -11,7 +11,7 @@ class Exam < ActiveRecord::Base
   accepts_nested_attributes_for :results
 
   before_create ->{self.questions = category.questions.some}
-  before_save ->{self.correct_number = results.count(&:is_correct?)}
+  before_save ->{self.correct_number = results.select(&:correct?).count}
 
   after_create ->{RemineUserWorker.perform_in 2.hours, id}
 
