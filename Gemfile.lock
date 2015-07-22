@@ -182,6 +182,10 @@ GEM
       redis (~> 3.0, >= 3.0.4)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    rspec-activemodel-mocks (1.0.1)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      rspec-mocks (>= 2.99, < 4.0)
     rspec-core (3.3.2)
       rspec-support (~> 3.3.0)
     rspec-expectations (3.3.1)
@@ -270,6 +274,7 @@ DEPENDENCIES
   rails (= 4.2.1)
   rails_config
   ransack
+  rspec-activemodel-mocks
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
